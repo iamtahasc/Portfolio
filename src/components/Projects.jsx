@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { FiExternalLink, FiArrowUpRight } from "react-icons/fi";
+import { FaUtensils, FaPlane, FaCar, FaImage } from "react-icons/fa";
 import { fadeUp } from "./animationHelpers";
 
 const Projects = ({ onOpenProject }) => {
@@ -9,80 +10,111 @@ const Projects = ({ onOpenProject }) => {
       id: "digital-menu",
       title: "Digital Menu Ordering System",
       shortDesc:
-        "QR-based digital food ordering system with an interactive layout.",
+        "A complete QR-based Digital Menu Ordering System enabling customers to browse menu items, place orders, and generate bills, while providing real-time dashboards for staff and admins to manage orders, menu items, settings, sales reports, and staff accounts using Firebase Firestore.",
       longDesc:
-        "A full digital menu system where customers can scan a QR code, browse categories, view item details and add items to cart. It reduces manual work, speeds up ordering and provides a modern experience.",
+        `The Digital Menu Ordering System is a full-fledged restaurant management platform designed to digitize and streamline the dining experience. Customers can instantly access the restaurant’s menu by scanning a table-specific QR code, explore dishes, customize quantities, and place orders directly from their smartphones.
+
+The system processes orders in real-time using Firebase, where staff receive instant notifications for new orders. A dedicated staff dashboard allows the team to update order statuses such as Pending, Preparing, Ready, Served, and Completed, ensuring smooth workflow and reduced wait times.
+
+Admins have a powerful dashboard to manage the entire ecosystem — including menu creation, staff management, order monitoring, tax configuration, and sales reporting with CSV export. Built using React, Vite, Tailwind CSS, and Firestore, the system offers high performance, seamless UI animations, responsive layouts, and secure authentication.
+
+This project demonstrates expertise in full-stack development, real-time systems, UI/UX design, database modeling, cloud services, role-based authentication, and complete end-to-end modern web app development.`,
       role:
-        "Designed the UI flow, implemented menu browsing, cart logic and basic order submission.",
-      tech: ["HTML", "CSS", "JavaScript"],
+        "Built the complete full-stack system, including UI, Firebase backend, authentication, and real-time order management dashboards.",
+      tech: ["ReactJS (Vite)", "Tailwind CSS", "Framer Motion", "Firebase Firestore", "Firebase Authentication", "Firebase Hosting"],
       code: "https://github.com/iamtahasc/Digital-Menu-Ordering-System",
       screenshots: [
-        "/screenshots/digital-menu-1.png",
-        "/screenshots/digital-menu-2.png",
+        "/screenshots/DMOS/Admin.png",
+        "/screenshots/DMOS/Staff.png",
+        "/screenshots/DMOS/Customer.jpg",
+        "/screenshots/DMOS/Cart.jpg",
+        "/screenshots/DMOS/Order.jpg",
+        "/screenshots/DMOS/Login.png",
+        "/screenshots/DMOS/ALogin.png",
+        "/screenshots/DMOS/SLogin.png",
+        "/screenshots/DMOS/Menu.png",
+        "/screenshots/DMOS/Settings.png",
+        "/screenshots/DMOS/Report.png",
+        "/screenshots/DMOS/Role.png",
+        "/screenshots/DMOS/Bils.png",
       ],
+      icon: <FaUtensils />,
     },
     {
       id: "airline-ticketing",
       title: "Airline Ticketing System",
       shortDesc:
-        "Java-based system for flight booking, passenger records and ticketing.",
+        "A Java-based Airline Ticketing System that automates flight booking, passenger management, cancellations, and boarding pass generation using a user-friendly Swing interface and MySQL database connectivity.",
       longDesc:
-        "A desktop application to manage airline ticket bookings, passenger information and ticket generation. Uses MySQL for persistent storage and showcases OOP concepts and Swing-based UI.",
+        "The Airline Ticketing System is a complete desktop application built using Java Swing and MySQL to streamline airline administrative operations. The system allows airline staff to manage passengers, flights, ticket bookings, cancellations, and boarding passes through an intuitive graphical interface. It improves workflow efficiency, enhances data accuracy, and ensures secure storage using a well-structured MySQL database. The project demonstrates strong implementation of Java OOP principles, GUI development, event handling, and real-time database connectivity using JDBC.",
       role:
-        "Worked on module design, database schema and core booking/cancellation workflows.",
+        "Designed and built the full application, implemented core features, and managed all database and UI functionality.",
       tech: ["Java", "Swing", "MySQL"],
       code: "https://github.com/iamtahasc/Airline-Ticketing-System",
       screenshots: [
-        "/screenshots/airline-1.png",
-        "/screenshots/airline-2.png",
+        "/screenshots/ATS/Homepage.png",
+        "/screenshots/ATS/Login.png",
+        "/screenshots/ATS/AddPassenger.png",
+        "/screenshots/ATS/FlightDetails.png",
+        "/screenshots/ATS/Book.png",
+        "/screenshots/ATS/Cancellation.png",
+        "/screenshots/ATS/BoardingPass.png",
       ],
+      icon: <FaPlane />,
     },
     {
       id: "car-racing",
       title: "Collision Detection Car Racing Game",
       shortDesc:
-        "2D racing game with obstacles, collision detection and scoring.",
+        "A fast-paced 2D car-avoidance game built using Python and Pygame, where players navigate a vehicle through traffic while avoiding collisions with dynamically spawning opponent cars.",
       longDesc:
         "A Python-based 2D car racing game created using Pygame. The player avoids incoming obstacles, and collision detection ends the game. Includes scoring, increasing difficulty and simple game UI.",
       role:
-        "Developed the main game loop, collision logic, scoring mechanism and game screens.",
+        "Built the entire game, including movement control, collision detection, scoring, and UI flow.",
       tech: ["Python", "Pygame"],
       code: "https://github.com/iamtahasc/Collision-Detection-Car-Racing-Game",
       screenshots: [
-        "/screenshots/car-race-1.png",
-        "/screenshots/car-race-2.png",
+        "/screenshots/CRG/Game.png",
+        "/screenshots/CRG/Score.png",
       ],
+      icon: <FaCar />,
     },
     {
       id: "image-finder",
       title: "Image Finder App",
       shortDesc:
-        "Responsive image search & viewing experience using public APIs.",
+        "A responsive web application that allows users to search and browse high-quality images using the Unsplash API. The app features real-time search, smooth loading, and a clean user interface optimized for all devices.",
       longDesc:
-        "An image search web application that fetches pictures based on search queries. Includes responsive grid layout, basic pagination/scrolling and a simple, clean interface for browsing images.",
+        "Image Finder App is a fully responsive and modern web application designed to provide users with a seamless image-searching experience. Built with HTML, CSS, and JavaScript, the application connects to the Unsplash API to fetch and display high-resolution images based on user queries. The project focuses on clean UI/UX, responsive layout, and efficient API handling. Features include an intuitive search bar, dynamic image rendering, and a “View More” button that loads additional results without refreshing the page. The design ensures consistent performance across desktop and mobile devices, with smooth transitions, adaptive layouts, and proper fallback handling for empty searches or no results. This project demonstrates strong front-end development practices including asynchronous JavaScript (fetch API), responsive design techniques, DOM manipulation, API integration, and usability-focused UI development.",
       role:
-        "Designed the layout, integrated image API and handled search and render logic.",
-      tech: ["HTML", "CSS", "JavaScript"],
+        "Developed the complete front-end, integrated the Unsplash API, and implemented responsive UI with search and pagination features.",
+      tech: ["HTML", "CSS", "JavaScript", "Unsplash API", "GitHub Pages (Hosting)"],
       code: "https://github.com/iamtahasc/Image-Finder-App",
       screenshots: [
-        "/screenshots/image-finder-1.png",
-        "/screenshots/image-finder-2.png",
+        "/screenshots/IFA/Desk.png",
+        "/screenshots/IFA/Mob.png",
       ],
+      icon: <FaImage />,
     },
   ];
 
   return (
     <section id="projects" className="py-20 md:py-24 bg-gradient-to-br from-gray-900/80 via-blue-900/10 to-indigo-900/20 relative overflow-hidden">
+          <div className="pointer-events-none absolute right-[-4rem] top-0 h-72 w-72 rounded-full bg-sky-500/15 blur-3xl" />
       <div className="pointer-events-none absolute left-[-5rem] bottom-10 h-72 w-72 rounded-full bg-indigo-500/20 blur-3xl" />
       <div className="max-w-6xl mx-auto px-4 sm:px-6 relative">
-        <p className="text-[11px] md:text-xs tracking-[0.3em] text-sky-400/90 uppercase mb-3">
-          Projects
-        </p>
-        <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-          Projects
-        </h2>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
+          <p className="text-[11px] md:text-xs tracking-[0.3em] text-sky-400/90 uppercase mb-3">
+            Projects
+          </p>
+        </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid md:grid-cols-2 gap-6 mt-6">
           {projects.map((project, i) => (
             <motion.div
               key={project.id}
@@ -90,36 +122,59 @@ const Projects = ({ onOpenProject }) => {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.4 }}
-              className="group bg-gradient-to-br from-gray-800/80 to-blue-900/40 border border-white/15 rounded-2xl p-5 flex flex-col justify-between shadow-[0_18px_40px_rgba(15,23,42,0.95)] hover:border-sky-400/70 hover:-translate-y-1.5 transition-all"
+              className="group bg-gradient-to-br from-gray-800/80 to-blue-900/40 border border-white/15 rounded-2xl p-5 flex flex-col justify-between shadow-[0_18px_40px_rgba(15,23,42,0.95)] transform transition-all duration-300 hover:-translate-y-1.5 hover:scale-[1.02] hover:border-sky-400/70 hover:shadow-[0_25px_60px_rgba(56,189,248,0.2)] backdrop-blur-sm relative"
             >
               <div>
-                <p className="text-[11px] md:text-xs tracking-[0.3em] text-sky-400/90 uppercase mb-3">
+                <motion.p 
+                  className="text-[11px] md:text-xs tracking-[0.3em] text-sky-400/90 uppercase mb-3 relative pl-4 before:content-[''] before:absolute before:left-0 before:top-1/2 before:transform before:-translate-y-1/2 before:w-2 before:h-2 before:rounded-full before:bg-sky-400"
+                  initial={{ opacity: 0, x: -10 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.3, delay: 0.1 }}
+                >
                   Featured Project
-                </p>
-                <h3 className="text-lg sm:text-xl font-semibold text-sky-100 group-hover:text-sky-300">
+                </motion.p>
+                <motion.h3 
+                  className="text-lg sm:text-xl font-semibold text-sky-100 group-hover:text-sky-300 flex items-center gap-2"
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.3, delay: 0.2 }}
+                >
+                  <span className="text-sky-400">{project.icon}</span>
                   {project.title}
-                </h3>
-                <p className="text-sm md:text-base text-slate-300 leading-relaxed mt-3">
+                </motion.h3>
+                <motion.p 
+                  className="text-sm md:text-base text-slate-300 leading-relaxed mt-3"
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.3, delay: 0.3 }}
+                >
                   {project.shortDesc}
-                </p>
+                </motion.p>
               </div>
 
               <div className="mt-5 flex items-center justify-between">
-                <button
+                <motion.button
                   onClick={() => onOpenProject(project)}
                   className="text-[11px] sm:text-sm text-sky-300 flex items-center gap-1 hover:underline"
+                  whileHover={{ x: 5 }}
+                  transition={{ type: "spring", stiffness: 400 }}
                 >
                   Know More
                   <FiExternalLink />
-                </button>
+                </motion.button>
 
-                <a
+                <motion.a
                   href={project.code}
                   target="_blank"
                   className="flex items-center gap-1 text-[11px] sm:text-sm text-gray-400 hover:text-sky-300"
+                  whileHover={{ x: 5 }}
+                  transition={{ type: "spring", stiffness: 400 }}
                 >
                   View Code <FiArrowUpRight />
-                </a>
+                </motion.a>
               </div>
             </motion.div>
           ))}

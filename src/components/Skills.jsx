@@ -117,7 +117,7 @@ const Skills = () => {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.4 }}
-              className="bg-gradient-to-br from-gray-800/70 to-blue-900/30 border border-white/15 rounded-2xl p-5 shadow-[0_18px_40px_rgba(15,23,42,0.9)] backdrop-blur-sm transform transition-all duration-300 hover:-translate-y-1.5 hover:scale-[1.02] hover:border-sky-400/70 hover:shadow-[0_25px_60px_rgba(56,189,248,0.2)] relative md:hover:bg-gradient-to-br md:hover:from-sky-500/6 md:hover:to-transparent md:hover:backdrop-blur-sm md:hover:shadow-[0_30px_60px_rgba(56,189,248,0.06)] transition-colors duration-300"
+              className="relative bg-gradient-to-br from-gray-800/70 to-blue-900/30 border border-white/15 rounded-2xl p-5 shadow-[0_18px_40px_rgba(15,23,42,0.9)] transform transition-all duration-300 hover:-translate-y-1.5 hover:scale-[1.02] hover:border-sky-400/70 hover:shadow-[0_25px_60px_rgba(56,189,248,0.2)]"
             >
               <h3 className="text-sm sm:text-base font-semibold text-cyan-300 mb-4 relative pl-4 before:content-[''] before:absolute before:left-0 before:top-1/2 before:transform before:-translate-y-1/2 before:w-2 before:h-2 before:rounded-full before:bg-cyan-400">
                 {group.title}
