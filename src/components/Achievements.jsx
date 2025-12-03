@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { FiX } from "react-icons/fi";
-import { fadeUp } from "./animationHelpers";
+import { fadeUp, smoothScale } from "./animationHelpers";
 
 const certificates = [
   {
@@ -66,7 +66,7 @@ const Achievements = () => {
     <>
       <section
       id="achievements"
-      className="py-20 md:py-24 bg-gradient-to-br from-gray-900/80 via-blue-900/10 to-indigo-900/20 relative overflow-hidden"
+      className="py-8 md:py-12 bg-gradient-to-br from-gray-900/80 via-blue-900/10 to-indigo-900/20 relative overflow-hidden"
     >
       <div className="pointer-events-none absolute right-[-5rem] top-10 h-72 w-72 rounded-full bg-emerald-500/12 blur-3xl" />
       <div className="max-w-6xl mx-auto px-4 sm:px-6 relative">
@@ -172,10 +172,10 @@ function CertificateLightbox({ image, title, isOpen, onClose }) {
 
       <motion.div
         ref={dialogRef}
-        initial={{ opacity: 0, scale: 0.97 }}
-        animate={{ opacity: 1, scale: 1 }}
-        exit={{ opacity: 0, scale: 0.97 }}
-        transition={{ duration: 0.22 }}
+        variants={smoothScale(0)}
+        initial="hidden"
+        animate="visible"
+        exit="hidden"
         className="relative max-w-[95vw] w-full flex flex-col items-center justify-center"
       >
 

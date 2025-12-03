@@ -55,6 +55,23 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Enhanced animation defaults */
+body {
+  transition: background-color 0.5s ease;
+}
+
+/* Improved focus transitions */
+:focus {
+  transition: outline-offset 0.2s ease;
+}
+
+/* Smooth transform transitions */
+.transform {
+  transition-property: transform;
+  transition-duration: 0.3s;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 /* Image optimization */
 img {
   -webkit-user-drag: none;
@@ -75,5 +92,22 @@ img:not([src*=".svg"]) {
   * {
     animation-duration: 0.8s !important;
     transition-duration: 0.3s !important;
+    scroll-behavior: smooth;
+  }
+  
+  /* Enhanced smooth scrolling for all elements */
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px; /* Account for fixed navbar */
+  }
+  
+  /* Smooth transitions for interactive elements */
+  a, button, .cursor-pointer {
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+  }
+  
+  /* Smooth hover transitions */
+  .transition-all {
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
   }
 }

@@ -5,6 +5,7 @@ import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { FiX, FiArrowUpRight, FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import { FaUtensils, FaPlane, FaCar, FaImage } from "react-icons/fa";
+import { smoothScale, smoothSlideIn } from "./animationHelpers";
 
 // Project Image Carousel Component
 const ProjectImageCarousel = ({ images }) => {
@@ -164,10 +165,10 @@ const LightboxViewer = ({ images, index, onClose, onNext, onPrev }) => {
 
   return (
     <motion.div
-      initial={{ opacity: 0, scale: 0.9 }}
-      animate={{ opacity: 1, scale: 1 }}
-      exit={{ opacity: 0, scale: 0.9, transition: { duration: 0.2 } }}
-      transition={{ type: "spring", damping: 25, stiffness: 300 }}
+      variants={smoothScale(0)}
+      initial="hidden"
+      animate="visible"
+      exit="hidden"
       className="fixed inset-0 z-[80] bg-black/90 backdrop-blur-xl flex items-center justify-center"
       onClick={(e) => {
         e.stopPropagation();
@@ -183,10 +184,10 @@ const LightboxViewer = ({ images, index, onClose, onNext, onPrev }) => {
     >
       {/* Centered image with enhanced styling */}
       <motion.div 
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        exit={{ opacity: 0, y: 20 }}
-        transition={{ delay: 0.1, type: "spring", damping: 25, stiffness: 300 }}
+        variants={smoothSlideIn('up', 0.1)}
+        initial="hidden"
+        animate="visible"
+        exit="hidden"
         className="max-w-5xl max-h-[85vh] flex items-center justify-center p-4"
         onClick={(e) => e.stopPropagation()}
       >
@@ -204,10 +205,10 @@ const LightboxViewer = ({ images, index, onClose, onNext, onPrev }) => {
       
       {/* Enhanced Navigation buttons with glow effect - responsive design */}
       <motion.button
-        initial={{ opacity: 0, x: -20 }}
-        animate={{ opacity: 1, x: 0 }}
-        exit={{ opacity: 0, x: -20 }}
-        transition={{ delay: 0.2 }}
+        variants={smoothSlideIn('left', 0.2)}
+        initial="hidden"
+        animate="visible"
+        exit="hidden"
         onClick={(e) => {
           e.stopPropagation();
           handlePrev();
@@ -219,10 +220,10 @@ const LightboxViewer = ({ images, index, onClose, onNext, onPrev }) => {
       </motion.button>
       
       <motion.button
-        initial={{ opacity: 0, x: 20 }}
-        animate={{ opacity: 1, x: 0 }}
-        exit={{ opacity: 0, x: 20 }}
-        transition={{ delay: 0.2 }}
+        variants={smoothSlideIn('right', 0.2)}
+        initial="hidden"
+        animate="visible"
+        exit="hidden"
         onClick={(e) => {
           e.stopPropagation();
           handleNext();
@@ -235,10 +236,10 @@ const LightboxViewer = ({ images, index, onClose, onNext, onPrev }) => {
       
       {/* Enhanced Close button with glow effect */}
       <motion.button
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        exit={{ opacity: 0, y: -20 }}
-        transition={{ delay: 0.2 }}
+        variants={smoothSlideIn('up', 0.2)}
+        initial="hidden"
+        animate="visible"
+        exit="hidden"
         onClick={(e) => {
           e.stopPropagation();
           isLightboxOpen = false;
@@ -295,9 +296,10 @@ const ProjectDetailModal = ({ project, onClose }) => {
   return (
     <div className="fixed inset-0 z-[60] bg-black/70 backdrop-blur flex items-center justify-center px-3 sm:px-4 overflow-y-auto py-8">
       <motion.div
-        initial={{ opacity: 0, y: 40, scale: 0.96 }}
-        animate={{ opacity: 1, y: 0, scale: 1 }}
-        exit={{ opacity: 0, y: 40, scale: 0.95 }}
+        variants={smoothScale(0.1)}
+        initial="hidden"
+        animate="visible"
+        exit="hidden"
         className="max-w-3xl w-full bg-gradient-to-br from-gray-800/90 via-blue-900/30 to-indigo-900/40 border border-white/20 rounded-2xl p-5 sm:p-6 relative shadow-[0_22px_60px_rgba(15,23,42,0.95)] my-auto"
       >
         <div className="absolute top-6 left-6 text-sky-300/95 text-2xl">
