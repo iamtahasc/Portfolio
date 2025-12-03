@@ -36,7 +36,7 @@ This project demonstrates expertise in full-stack development, real-time systems
         "/screenshots/DMOS/Settings.png",
         "/screenshots/DMOS/Report.png",
         "/screenshots/DMOS/Role.png",
-        "/screenshots/DMOS/Bils.png",
+        "/screenshots/DMOS/Bill.png",
       ],
       icon: <FaUtensils />,
     },
