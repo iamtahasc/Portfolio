@@ -2,6 +2,8 @@ import React, { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 import { FiDownload, FiArrowUpRight } from "react-icons/fi";
 import { fadeUp, subtleFloat } from "./animationHelpers";
+import { p } from "framer-motion/client";
+import profile from "../assets/profile.png";
 
 // Typing animation component
 const TypingText = ({ texts = ["Web Developer", "AI & Cybersecurity Enthusiast", "Problem Solver", "Innovator"] }) => {
@@ -285,7 +287,7 @@ const Hero = () => {
 
               <div className="relative flex flex-col items-center px-8 pt-10 pb-8 min-h-[620px]">
                 <motion.img
-                  src="/src/assets/profile.png"
+                  src={profile}
                   alt="Taha"
                   className="h-[520px] object-contain rounded-3xl drop-shadow-[0_35px_70px_rgba(15,23,42,0.9)] brightness-110 contrast-105"
                   whileHover={{ scale: 1.02 }}
