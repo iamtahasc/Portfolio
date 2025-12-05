@@ -35,7 +35,7 @@ const About = () => {
           </p>
 
           <a
-            href="/resume.pdf"
+            href="/Taha_Contractor_Resume.pdf"
             className="mt-7 inline-flex items-center gap-2 rounded-xl bg-sky-500 px-5 py-2.5 text-sm font-semibold text-slate-950 shadow-[0_18px_40px_rgba(56,189,248,0.6)] hover:scale-[1.03] active:scale-[0.98] transition-transform"
           >
             <FiDownload /> Download Resume

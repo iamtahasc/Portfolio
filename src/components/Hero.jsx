@@ -209,7 +209,7 @@ const Hero = () => {
             </motion.a>
 
             <motion.a
-              href="/resume.pdf"
+              href="/Taha_Contractor_Resume.pdf"
               className="inline-flex items-center gap-3 rounded-2xl border-2 border-white/30 bg-gradient-to-r from-gray-800/50 to-blue-900/20 px-7 py-4 text-base font-bold text-slate-100 hover:border-sky-400/80 hover:text-sky-100 transition-all duration-300 backdrop-blur-sm"
               whileHover={{ scale: 1.05, y: -5 }}
               whileTap={{ scale: 0.95 }}
