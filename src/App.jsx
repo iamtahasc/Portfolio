@@ -196,7 +196,7 @@ export default function App() {
         <div className="h-1 w-full bg-gradient-to-r from-transparent via-sky-900/10 to-transparent pointer-events-none" />
         <div className="max-w-7xl mx-auto px-4 py-2 flex items-center justify-center">
           <p className="text-sm text-slate-400 hover:text-slate-300 transition duration-300 text-center">
-            © {new Date().getFullYear()} Taha Saifee Contractor. All rights reserved.
+            © {new Date().getFullYear()} Taha Contractor. All rights reserved.
           </p>
         </div>
       </footer>
