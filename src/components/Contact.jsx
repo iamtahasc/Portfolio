@@ -3,7 +3,6 @@ import {
   FaPhoneAlt,
   FaEnvelope,
   FaWhatsapp,
-  FaInstagram,
   FaLinkedin,
   FaGithub,
   FaMapMarkerAlt,
@@ -86,24 +85,6 @@ const Contact = () => {
                 <h3 className="text-xl font-semibold text-sky-100 mb-1">WhatsApp</h3>
                 <p className="text-slate-300 leading-relaxed">
                   Chat on WhatsApp
-                </p>
-              </div>
-            </div>
-          </a>
-
-          {/* Instagram Card */}
-          <a 
-            href="https://instagram.com/iamtahasc" target="_blank" rel="noopener noreferrer"
-            className="relative bg-gradient-to-br from-gray-800/70 to-blue-900/30 border border-white/15 rounded-2xl p-6 shadow-[0_18px_40px_rgba(15,23,42,0.9)] transform transition-all duration-300 hover:-translate-y-1.5 hover:scale-[1.02] hover:border-sky-400/70 hover:shadow-[0_25px_60px_rgba(56,189,248,0.2)] backdrop-blur-sm block"
-          >
-            <div className="flex items-center gap-4">
-              <div className="text-pink-400 text-3xl">
-                <FaInstagram />
-              </div>
-              <div>
-                <h3 className="text-xl font-semibold text-sky-100 mb-1">Instagram</h3>
-                <p className="text-slate-300 leading-relaxed">
-                  Follow Me @iamtahasc
                 </p>
               </div>
             </div>

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { FiMenu, FiX, FiHome, FiUser, FiBook, FiCode, FiAward, FiMail, FiStar } from "react-icons/fi";
+import { FiMenu, FiX, FiHome, FiUser, FiBook, FiCode, FiAward, FiMail, FiStar, FiBriefcase, FiGithub, FiLinkedin } from "react-icons/fi";
 import { smoothSlideIn } from "./animationHelpers";
 
 const Navbar = ({ activeSection, onNavClick }) => {
@@ -18,6 +18,7 @@ const Navbar = ({ activeSection, onNavClick }) => {
   const navItems = [
     { id: "home", label: "Home", icon: <FiHome /> },
     { id: "about", label: "About", icon: <FiUser /> },
+    { id: "experience", label: "Experience", icon: <FiBriefcase /> },
     { id: "education", label: "Education", icon: <FiBook /> },
     { id: "skills", label: "Skills", icon: <FiCode /> },
     { id: "projects", label: "Projects", icon: <FiAward /> },
@@ -50,7 +51,7 @@ const Navbar = ({ activeSection, onNavClick }) => {
           </motion.a>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-2">
+          <nav className="hidden md:flex items-center gap-1 lg:gap-1.5">
             {navItems.map((item) => (
               <motion.a
                 key={item.id}
@@ -60,7 +61,7 @@ const Navbar = ({ activeSection, onNavClick }) => {
                   onNavClick(item.id);
                   setIsMenuOpen(false);
                 }}
-                className={`group relative flex items-center gap-2 px-4 py-2 transition-all ${
+                className={`group relative flex items-center gap-1.5 px-2.5 lg:px-3.5 py-2 transition-all ${
                   activeSection === item.id
                     ? "text-cyan-400"
                     : "text-gray-300 hover:text-white"
@@ -70,8 +71,8 @@ const Navbar = ({ activeSection, onNavClick }) => {
                 transition={{ type: "spring", stiffness: 500, damping: 20 }}
                 aria-current={activeSection === item.id ? "page" : undefined}
               >
-                <span className="text-lg">{item.icon}</span>
-                <span className="relative z-10 text-sm font-medium">{item.label}</span>
+                <span className="text-base hidden xl:inline-block">{item.icon}</span>
+                <span className="relative z-10 text-[13px] lg:text-sm font-medium">{item.label}</span>
 
                 {/* Underline: base (invisible) */}
                 <span
@@ -121,77 +122,107 @@ const Navbar = ({ activeSection, onNavClick }) => {
         </div>
       </div>
 
-      {/* Mobile Navigation */}
+      {/* Mobile Navigation Drawer */}
       <AnimatePresence>
         {isMenuOpen && (
-          <motion.div
-            variants={smoothSlideIn('down', 0)}
-            initial="hidden"
-            animate="visible"
-            exit="hidden"
-            className="md:hidden bg-gray-900/95 backdrop-blur-3xl border-t border-cyan-500/20"
-          >
-            <div className="max-w-6xl mx-auto px-4 sm:px-6 py-4">
-              <div className="grid grid-cols-2 gap-2">
-                {navItems.map((item) => (
-                  <motion.a
-                    key={item.id}
-                    href={`#${item.id}`}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      onNavClick(item.id);
-                      setIsMenuOpen(false);
-                    }}
-                    className={`group relative flex items-center gap-3 px-4 py-3 transition-all ${
-                      activeSection === item.id
-                        ? "text-cyan-400"
-                        : "text-gray-300 hover:text-white"
-                    }`}
-                    whileHover={{ x: 5 }}
-                    whileTap={{ scale: 0.95 }}
-                    transition={{ type: "spring", stiffness: 500, damping: 20 }}
-                    aria-current={activeSection === item.id ? "page" : undefined}
+          <>
+            {/* Backdrop Overlay */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.3 }}
+              onClick={() => setIsMenuOpen(false)}
+              className="fixed inset-0 z-[60] bg-black/60 backdrop-blur-sm md:hidden"
+            />
+
+            {/* Sidebar Panel */}
+            <motion.div
+              initial={{ x: "100%" }}
+              animate={{ x: 0 }}
+              exit={{ x: "100%" }}
+              transition={{ type: "spring", stiffness: 350, damping: 30 }}
+              className="fixed top-0 right-0 bottom-0 z-[70] w-72 max-w-[80vw] bg-gray-950/95 backdrop-blur-3xl border-l border-cyan-500/20 shadow-[0_0_50px_rgba(0,0,0,0.8)] flex flex-col justify-between p-6 md:hidden"
+            >
+              <div>
+                {/* Header Row */}
+                <div className="flex items-center justify-between border-b border-white/10 pb-4">
+                  <div className="flex items-center gap-2">
+                    <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-cyan-500 to-blue-500 flex items-center justify-center shadow-[0_0_15px_rgba(56,189,248,0.5)]">
+                      <span className="text-white font-bold text-sm">TC</span>
+                    </div>
+                    <span className="font-bold text-white text-base">
+                      Taha <span className="text-cyan-400">Contractor</span>
+                    </span>
+                  </div>
+                  <button
+                    onClick={() => setIsMenuOpen(false)}
+                    className="p-1.5 rounded-lg text-gray-400 hover:text-white hover:bg-gray-800/50"
+                    aria-label="Close menu"
                   >
-                    <span className="text-lg">{item.icon}</span>
-                    <span className="relative z-10 text-sm font-medium">{item.label}</span>
+                    <FiX className="text-xl" />
+                  </button>
+                </div>
 
-                    {/* Underline: base (invisible) */}
-                    <span
-                      aria-hidden="true"
-                      className={`
-                        absolute left-0 -bottom-1 h-[3px] rounded-full transition-all duration-300
-                        ${activeSection === item.id ? "w-full" : "w-0 group-hover:w-full"}
-                      `}
-                      style={{
-                        // gradient + subtle blur glow
-                        background:
-                          activeSection === item.id
-                            ? "linear-gradient(90deg, rgba(14,165,233,1), rgba(56,189,248,1), rgba(99,102,241,1))"
-                            : "linear-gradient(90deg, rgba(14,165,233,0.0), rgba(56,189,248,0.0), rgba(99,102,241,0.0))",
-                        boxShadow:
-                          activeSection === item.id
-                            ? "0 6px 18px rgba(56,189,248,0.18), 0 2px 6px rgba(99,102,241,0.06)"
-                            : "none",
+                {/* Vertical Links Stack */}
+                <nav className="flex flex-col gap-2 mt-6">
+                  {navItems.map((item) => (
+                    <motion.a
+                      key={item.id}
+                      href={`#${item.id}`}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        onNavClick(item.id);
+                        setIsMenuOpen(false);
                       }}
-                    />
-
-                    {/* Glow overlay (soft, blurred) */}
-                    <span
-                      aria-hidden="true"
-                      className={`absolute left-0 -bottom-3 h-1 rounded-full pointer-events-none transition-opacity duration-300 ${
-                        activeSection === item.id ? "opacity-80" : "opacity-0 group-hover:opacity-60"
+                      className={`group relative flex items-center gap-3 px-4 py-3 rounded-xl transition-all ${
+                        activeSection === item.id
+                          ? "text-cyan-400 bg-gradient-to-r from-cyan-500/10 via-cyan-500/5 to-transparent border-l-4 border-cyan-400 pl-3"
+                          : "text-gray-300 hover:text-white hover:bg-white/5 border-l-4 border-transparent pl-3"
                       }`}
-                      style={{
-                        width: activeSection === item.id ? "100%" : "100%",
-                        background: "radial-gradient(ellipse at center, rgba(56,189,248,0.14), rgba(99,102,241,0.02))",
-                        filter: "blur(10px)",
-                      }}
-                    />
-                  </motion.a>
-                ))}
+                      whileTap={{ scale: 0.98 }}
+                      transition={{ type: "spring", stiffness: 400, damping: 25 }}
+                      aria-current={activeSection === item.id ? "page" : undefined}
+                    >
+                      <span className="text-lg">{item.icon}</span>
+                      <span className="text-sm font-semibold">{item.label}</span>
+                    </motion.a>
+                  ))}
+                </nav>
               </div>
-            </div>
-          </motion.div>
+
+              {/* Drawer Footer Socials */}
+              <div className="border-t border-white/10 pt-4 flex flex-col gap-3">
+                <p className="text-[10px] uppercase tracking-[0.2em] text-slate-500 font-semibold">
+                  Connect With Me
+                </p>
+                <div className="flex items-center gap-4 text-gray-400 text-lg">
+                  <a
+                    href="https://linkedin.com/in/iamtahasc"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-cyan-400 transition-colors"
+                  >
+                    <FiLinkedin />
+                  </a>
+                  <a
+                    href="https://github.com/iamtahasc"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-cyan-400 transition-colors"
+                  >
+                    <FiGithub />
+                  </a>
+                  <a
+                    href="mailto:tasaif265@gmail.com"
+                    className="hover:text-cyan-400 transition-colors"
+                  >
+                    <FiMail />
+                  </a>
+                </div>
+              </div>
+            </motion.div>
+          </>
         )}
       </AnimatePresence>
     </header>

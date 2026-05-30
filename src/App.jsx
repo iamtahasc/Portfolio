@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import About from "./components/About";
+import Experience from "./components/Experience";
 import Education from "./components/Education";
 import Skills from "./components/Skills";
 import Projects from "./components/Projects";
@@ -21,6 +22,7 @@ export default function App() {
     const sectionIds = [
       "home",
       "about",
+      "experience",
       "education",
       "skills",
       "projects",
@@ -187,6 +189,7 @@ export default function App() {
       <Navbar activeSection={activeSection} onNavClick={handleNavClick} />
       <Hero />
       <About />
+      <Experience />
       <Education />
       <Skills />
       <Projects onOpenProject={setActiveProject} />

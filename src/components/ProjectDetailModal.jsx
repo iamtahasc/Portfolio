@@ -55,7 +55,7 @@ const ProjectImageCarousel = ({ images }) => {
 
   return (
     <>
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-4">
+      <div className="flex overflow-x-auto gap-3 pb-3 snap-x snap-mandatory scrollbar-none sm:grid sm:grid-cols-2 sm:overflow-x-visible sm:pb-0 sm:snap-none mb-4">
         {images.map((image, idx) => (
           <div 
             key={idx}
@@ -63,7 +63,7 @@ const ProjectImageCarousel = ({ images }) => {
               setIndex(idx);
               openLightbox();
             }}
-            className="h-32 sm:h-40 rounded-xl overflow-hidden bg-white/3 border border-white/8 flex items-center justify-center text-[11px] text-gray-300 overflow-hidden hover:scale-[1.02] transition-transform duration-300 hover:shadow-[0_20px_60px_rgba(0,0,0,0.6)] cursor-pointer"
+            className="min-w-[80%] sm:min-w-0 h-36 sm:h-40 snap-center shrink-0 rounded-xl overflow-hidden bg-white/3 border border-white/8 flex items-center justify-center text-[11px] text-gray-300 hover:scale-[1.02] transition-transform duration-300 hover:shadow-[0_20px_60px_rgba(0,0,0,0.6)] cursor-pointer"
           >
             <img 
               src={image} 

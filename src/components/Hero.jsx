@@ -285,11 +285,11 @@ const Hero = () => {
               <div className="absolute bottom-12 left-8 w-16 h-16 rounded-full border border-white/20 bg-gradient-to-br from-indigo-500/20 to-purple-500/20 backdrop-blur-sm animate-pulse delay-1000" />
               <div className="absolute top-1/2 left-4 w-20 h-20 rounded-full border border-white/20 bg-gradient-to-br from-emerald-500/20 to-teal-500/20 backdrop-blur-sm animate-pulse delay-700" />
 
-              <div className="relative flex flex-col items-center px-8 pt-10 pb-8 min-h-[620px]">
+              <div className="relative flex flex-col items-center px-6 sm:px-8 pt-8 sm:pt-10 pb-8 min-h-[420px] sm:min-h-[500px] lg:min-h-[620px]">
                 <motion.img
                   src={profile}
                   alt="Taha"
-                  className="h-[520px] object-contain rounded-3xl drop-shadow-[0_35px_70px_rgba(15,23,42,0.9)] brightness-110 contrast-105"
+                  className="h-[320px] sm:h-[400px] lg:h-[520px] object-contain rounded-3xl drop-shadow-[0_20px_50px_rgba(15,23,42,0.8)] lg:drop-shadow-[0_35px_70px_rgba(15,23,42,0.9)] brightness-110 contrast-105"
                   whileHover={{ scale: 1.02 }}
                   transition={{ type: "spring", stiffness: 300 }}
                 />
