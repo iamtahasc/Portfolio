@@ -65,26 +65,26 @@ const Experience = () => {
           </h2>
         </motion.div>
 
-        {/* Centered Cards Stack */}
-        <div className="max-w-3xl mx-auto space-y-8 mt-10 w-full">
+        {/* Full-Width Cards Stack */}
+        <div className="space-y-6 mt-10 w-full">
           {experiences.map((exp, idx) => (
             <motion.div
               key={idx}
               variants={fadeUp(idx * 0.15)}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: true, amount: 0.3 }}
+              viewport={{ once: true, amount: 0.2 }}
               className="w-full group"
             >
               {/* Card Container */}
-              <div className="bg-gradient-to-br from-gray-800/80 to-blue-900/30 border border-white/15 rounded-2xl p-6 shadow-[0_18px_40px_rgba(15,23,42,0.95)] transform transition-all duration-300 hover:-translate-y-1.5 hover:border-cyan-400/60 hover:shadow-[0_25px_60px_rgba(56,189,248,0.15)] backdrop-blur-sm relative">
+              <div className="bg-gradient-to-br from-gray-800/80 to-blue-900/30 border border-white/15 rounded-2xl p-6 shadow-[0_18px_40px_rgba(15,23,42,0.95)] transform transition-all duration-300 hover:-translate-y-1.5 hover:border-cyan-400/60 hover:shadow-[0_25px_60px_rgba(56,189,248,0.2)] backdrop-blur-sm relative w-full">
                 {/* Accent glow on top header */}
                 <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-cyan-500/20 to-transparent rounded-t-2xl pointer-events-none" />
 
                 {/* Header Section */}
                 <div className="flex flex-col md:flex-row md:items-center justify-between gap-2 mb-4">
                   <div>
-                    <h3 className="text-lg sm:text-xl font-bold text-white group-hover:text-cyan-300 transition-colors duration-300">
+                    <h3 className="text-lg sm:text-xl font-bold text-white group-hover:text-cyan-300 transition-colors duration-300 leading-snug">
                       {exp.role}
                     </h3>
                     <p className="text-sm font-semibold text-cyan-400/90 mt-1">
@@ -102,7 +102,7 @@ const Experience = () => {
                 </div>
 
                 {/* Bullet Descriptions */}
-                <ul className="list-disc pl-5 space-y-2 text-sm text-slate-300 mb-5 leading-relaxed">
+                <ul className="list-disc pl-5 space-y-2 text-sm md:text-base text-slate-300 mb-5 leading-relaxed">
                   {exp.description.map((bullet, i) => (
                     <li key={i} className="hover:text-white transition-colors duration-200">
                       {bullet}
