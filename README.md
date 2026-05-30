@@ -1,16 +1,17 @@
-# React + Vite
+# Taha Contractor - Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This repository contains the source code for my personal developer portfolio website.
 
-Currently, two official plugins are available:
+## Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+A modern, highly interactive, and responsive portfolio website designed to showcase my technical skills, featured projects, certifications, and building journey. Built using React 19, Vite 7, Tailwind CSS 3, and Framer Motion 12.
 
-## React Compiler
+* **Author:** Taha Contractor
+* **GitHub Profile:** [https://github.com/iamtahasc](https://github.com/iamtahasc)
+* **Live Site (Vercel):** [https://tahacontractor.vercel.app/](https://tahacontractor.vercel.app/)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Copyright & License
 
-## Expanding the ESLint configuration
+Copyright © 2026 Taha Contractor. All rights reserved.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+The source code, layouts, and assets in this repository are strictly private and owned solely by the author. This codebase is set up strictly for my personal deployment and is not open for public redistribution, adaptation, or copying.
